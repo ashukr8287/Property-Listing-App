@@ -8,7 +8,7 @@ It allows users to **sign up, log in, view property listings, and manage authent
 ## 🚀 Tech Stack
 - **Frontend:** React, Tailwind CSS  
 - **Backend/Services:** Firebase (Auth + Firestore)  
-- **Deployment:** Vercel / Netlify  
+- **Deployment:** Netlify  
 
 ---
 
