@@ -24,4 +24,4 @@ It allows users to **sign up, log in, view property listings, and manage authent
 
 
 🚀 View Deployed App
-https://my-property-listing-app.netlify.app/
+🔗 [Live Demo](https://my-property-listing-app.netlify.app/)
