@@ -24,7 +24,7 @@ function HeroSection() {
                   Discover, Buy, or Rent Verified Properties with Ease.
                 </p>
               </div>
-              <div className="relative lg:top-5 top-0 ">
+              <div className="relative ">
                 <div className="  w-[95%] lg:w-[80%] mx-auto mb-8 rounded-2xl lg:rounded-full bg-white py-4 px-2 shadow-2xl">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-nowrap  items-center justify-center lg:justify-between gap-4">
                     {/* For Rent Dropdown */}

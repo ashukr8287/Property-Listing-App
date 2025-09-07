@@ -30,7 +30,7 @@ function BuySectionCard({ details }) {
                 <div className="flex items-center gap-2">
                   <MapPin className="text-blue-600" size={20} />
                   <h2 className="md:text-lg text-base font-semibold text-gray-800">
-                    Green Villa, Uttar Pradesh
+                    {details.name}
                   </h2>
                 </div>
                 <Bookmark className="text-blue-800" fill="blue" size={20} />
@@ -45,9 +45,15 @@ function BuySectionCard({ details }) {
 
               {/* Price & Button */}
               <div className="flex justify-between items-center">
-                <span className="text-xl font-bold text-gray-800">
-                  $450,000
-                </span>
+               <span className="text-lg font-semibold text-gray-800">
+              <span className="text-lg font-semibold text-gray-800">
+                {details.buildingNumber
+                  ? `$${Number(
+                      details.buildingNumber.toString().slice(0, 5)
+                    ).toLocaleString()}`
+                  : "Contact for price"}
+              </span>
+            </span>
                 <button className="bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium px-4 py-2 rounded-full">
                   Know More
                 </button>
