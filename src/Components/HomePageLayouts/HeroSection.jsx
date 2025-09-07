@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../../assets/images/Hero-Section-img.jpg";
-import { Search, Home, MapPin, ChevronDown, Play } from "lucide-react";
+import { Search, Home, MapPin, ChevronDown, SquareArrowOutUpRight } from "lucide-react";
 
 function HeroSection() {
   return (
@@ -20,7 +20,7 @@ function HeroSection() {
                 <h1 className="text-2xl md:text-4xl font-extrabold mb-2">
                   Find Your Dream Home in One Click!
                 </h1>
-                <p className="text-gray-200 mb-6 text-base">
+                <p className="text-gray-200 mb-6 text-base lg:text-xl">
                   Discover, Buy, or Rent Verified Properties with Ease.
                 </p>
               </div>
@@ -44,7 +44,7 @@ function HeroSection() {
                     {/* For Rent Dropdown */}
                     <div className="flex items-center justify-between border border-gray-300 rounded-full px-5 py-3 w-full">
                       <div className="flex items-center">
-                        <Play className="w-5 h-5 text-gray-400 mr-2 rotate-90" />
+                        <SquareArrowOutUpRight className="w-5 h-5 text-gray-400 mr-2" />
                         <span className="text-gray-700 font-medium">
                           For Rent
                         </span>

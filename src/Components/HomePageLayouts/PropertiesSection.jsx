@@ -9,28 +9,28 @@ function PropertiesSection() {
       <div className="container mx-auto px-4 lg:px-8 ">
         <div className="grid md:grid-cols-2 md:gap-8 gap-4 items-center">
           {/* Images Section */}
-          <div className="relative h-[500px]">
-            <div className="absolute top-0 left-0 w-3/4 rounded-lg overflow-hidden shadow-2xl border-4 border-white">
+          <div className="relative sm:h-[500px] h-[400px]">
+            <div className="absolute top-0 left-0 w-3/4 rounded-lg overflow-hidden shadow-2xl border-4 border-white transform duration-200 ease-in-out hover:lg:z-10 md:hover:scale-105">
               <img
                 src={img1}
                 alt="Modern White House"
-                className="w-full h-[350px] object-cover"
+                className="w-full md:h-[350px] h-[280px] object-cover"
               />
             </div>
-            <div className="absolute bottom-0 right-0 w-3/5 rounded-lg overflow-hidden shadow-2xl border-4 border-white">
+            <div className="absolute sm:bottom-0  bottom-0 right-0 w-3/5 rounded-lg overflow-hidden shadow-2xl border-4 border-white transform duration-200 ease-in-out hover:lg:z-10 md:hover:scale-105">
               <img
                 src={img2}
                 alt="Wooden House"
-                className="w-full h-[300px] object-cover"
+                className="w-full md:h-[300px] h-[280px] object-cover"
               />
             </div>
           </div>
 
           {/* Info Section */}
           <div className="flex-1">
-            <h2 className="text-[#1e3a8a] font-bold text-3xl md:text-4xl mb-8 leading-tight">
+            <h2 className="text-[#1e3a8a] font-bold text-2xl md:text-4xl mb-8 leading-tight max-w-xl">
               We Provide Latest Properties
-              <br />
+              
               For Our Valuable Clients
             </h2>
             <div className="flex flex-col gap-8">

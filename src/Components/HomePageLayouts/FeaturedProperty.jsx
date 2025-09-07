@@ -14,7 +14,7 @@ function FeaturedProperty() {
           <h3 className="text-[#254D91] font-extrabold sm:text-2xl text-base md:text-3xl whitespace-nowrap ">
             Featured Property
           </h3>
-          <button className="flex items-center sm:py-2 py-1 sm:px-4 px-2 text-xs rounded-full text-[#254D91] bg-white border-2 border-[#1e3a8a] font-semibold  hover:bg-[#1e3a8a] hover:text-white md:text-base sm:text-xs ">See 260 New Projects <ArrowUpRight className="ml-2" size={18} /></button>
+          <button className="flex items-center py-2  sm:px-4 px-2 text-xs rounded-full text-[#254D91] bg-white border-2 border-[#1e3a8a] font-semibold  hover:bg-[#1e3a8a] hover:text-white md:text-base sm:text-xs ">See 260 New Projects <ArrowUpRight className="ml-2" size={18} /></button>
         </div>
         {/* Responsive grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -28,9 +28,9 @@ function FeaturedProperty() {
 
             <div className=" absolute md:bottom-5 md:left-5 left-2 bottom-2 text-white">
               <p className="md:text-base text-sm ">By Finder & Projects</p>
-              <h4 className=" font-semi-bold md:text-lg text-base">
+              <p className=" font-bold md:text-lg text-base">
                 Kenanga Residance
-              </h4>
+              </p>
             </div>
           </div>
 

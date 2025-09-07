@@ -27,7 +27,7 @@ function Services() {
 
   return (
     <section className=" py-6 md:py-10 bg-gray-50">
-      <div className="container mx-auto text-center px-4 lg:px-8">
+      <div className="container mx-auto text-center px-4 lg:px-8 ">
         {/* Section Heading */}
         <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-2">
           What We Do?
@@ -37,13 +37,13 @@ function Services() {
         </p>
 
         {/* Services Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition text-center"
+              className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition text-center hover:scale-105"
             >
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gray-100">
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gray-100 md:hover:scale-105">
                 {service.icon}
               </div>
               <h3 className="font-semibold text-lg mb-2">{service.title}</h3>

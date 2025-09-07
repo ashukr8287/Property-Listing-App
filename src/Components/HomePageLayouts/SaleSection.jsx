@@ -33,7 +33,7 @@ function SaleSection() {
     return (
       <section className="py-6 md:py-10 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8 flex gap-6 overflow-x-auto no-scrollbar">
-          {[...Array(5)].map((_, index) => (
+          {[...Array(4)].map((_, index) => (
             <CardLoading key={index} />
           ))}
         </div>
@@ -63,9 +63,9 @@ function SaleSection() {
         {/* Scrollable container */}
         <div className="flex gap-6 overflow-x-auto no-scrollbar pb-4">
           {data.length > 0 ? (
-            data.slice(12, 20).map((item) => (
+            data.slice(12,20).map((item) => (
               <div key={item.id} className="flex-shrink-0">
-                <PropertyCard details={item} />
+                <PropertyCard details={item} month="" />
               </div>
             ))
           ) : (

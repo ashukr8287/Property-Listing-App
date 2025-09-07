@@ -4,8 +4,8 @@ import { Search, Home, MapPin, ChevronDown, Play } from "lucide-react";
 
 function HeroSection() {
   return (
-    <section className="py-6 md:py-10 bg-gray-50">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="py-6 md:py-10 bg-gray-50 ">
+      <div className="container mx-auto px-4 lg:px-8 sm:mb-0 mb-5">
         {/* Background Image */}
         <div className="relative rounded-2xl  ">
           <img
@@ -14,18 +14,18 @@ function HeroSection() {
             className="w-full h-[380px] md:h-[460px] object-center rounded-2xl"
           />
 
-          <div className="absolute md:top-10 top-0 left-0 right-0">
-            <div className=" h-full flex flex-col  justify-between px-4" >
-              <div className=" text-white text-center">
-                <h1 className="text-xl md:text-4xl font-extrabold mb-2">
+          <div className="absolute top-0 left-0 right-0">
+            <div className="px-4 relative lg:top-60 md:top-30" >
+              <div className=" text-white w-[95%] lg:w-[80%] mx-auto">
+                <h1 className="text-xl md:text-4xl font-extrabold mb-2 mt-5 md:mt-0 ">
                   Find Your Dream Home in One Click!
                 </h1>
                 <p className="text-gray-200 md:mb-6 mb-4 text-base">
                   Discover, Buy, or Rent Verified Properties with Ease.
                 </p>
               </div>
-              <div className="relative lg:top-50">
-                <div className="  w-[90%] lg:w-[80%] mx-auto mb-8 rounded-2xl lg:rounded-full bg-white py-4 px-4 shadow-2xl">
+              <div className="relative lg:top-5 top-0 ">
+                <div className="  w-[95%] lg:w-[80%] mx-auto mb-8 rounded-2xl lg:rounded-full bg-white py-4 px-2 shadow-2xl">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-nowrap  items-center justify-center lg:justify-between gap-4">
                     {/* For Rent Dropdown */}
                     <div className="flex items-center justify-between border border-gray-300 rounded-full px-5 py-3 w-full">

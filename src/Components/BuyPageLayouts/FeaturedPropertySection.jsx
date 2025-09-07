@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
 import FetchApi from "../../utils/FetchApi";
-import FeaturedPropertyCard from "./FeaturedPropertyCard";
 import CardLoading from "../CommonLayouts/CardLoading";
-import PropertyCard from "../CommonLayouts/PropertyCard ";
+import BuySectionCard from "../CommonLayouts/BuySectionCard";
 
 
 
@@ -49,7 +47,7 @@ function FeaturedPropertySection() {
   }
   return (
     <section className="py-6 md:py-10 bg-gray-50">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-4 lg:px-8 ">
         <div className="flex flex-wrap  gap-4 items-center justify-between lg:mb-6 mb-4">
           <div>
             <h3 className="text-[#254D91] font-extrabold sm:text-2xl text-base md:text-3xl whitespace-nowrap mb-2 ">
@@ -61,11 +59,11 @@ function FeaturedPropertySection() {
           </button>
         </div>
         {/* Scrollable container */}
-        <div className="flex gap-6 overflow-x-auto no-scrollbar pb-4">
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6  pb-4 lg:px-20 ">
           {data.length > 0 ? (
-            data.slice(0, 8).map((item) => (
-              <div key={item.id} className="flex-shrink-0">
-                <PropertyCard details={item} />
+            data.slice(0, 2).map((item) => (
+              <div key={item.id} className="">
+                <BuySectionCard details={item} />
               </div>
             ))
           ) : (

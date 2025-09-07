@@ -1,4 +1,5 @@
 import React from "react";
+import logo from '../../assets/images/Logo-icon.png'
 
 function Footer() {
   return (
@@ -18,9 +19,9 @@ function Footer() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-2 text-black outline-none"
+              className="flex-1 ms:px-4 px-2 py-2 text-black outline-none"
             />
-            <button className="bg-blue-800 text-white px-8 py-2 m-1 rounded-full hover:bg-blue-900 transition">
+            <button className="bg-blue-800 text-white sm:px-8 px-4 py-2 m-1 rounded-full hover:bg-blue-900 transition">
               Submit
             </button>
           </div>
@@ -31,7 +32,7 @@ function Footer() {
       <div className="border-t border-gray-400 mt-10 pt-6 px-4 lg:px-8 container mx-auto flex flex-col md:flex-row items-center justify-between text-sm text-gray-200">
         {/* Logo */}
         <div className="flex items-center space-x-2 mb-4 md:mb-0">
-          <span className="text-xl">🏠</span>
+          <img src={logo} alt="" className="h-8"/>
           <h1 className="font-bold">PropBot</h1>
         </div>
 

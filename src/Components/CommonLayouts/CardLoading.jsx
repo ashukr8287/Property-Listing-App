@@ -2,7 +2,7 @@ import React from "react";
 
 const CardLoading = () => {
   return (
-    <div className="w-[280px] rounded-2xl shadow-md overflow-hidden p-2 bg-gray-100 animate-pulse">
+    <div className="lg:w-[330px] w-[280px] rounded-2xl shadow-md overflow-hidden p-2 bg-gray-100 animate-pulse">
       <div className="bg-gray-200 rounded-md">
         {/* Image skeleton */}
         <div className="w-full h-40 bg-gray-300 rounded-md mb-2"></div>

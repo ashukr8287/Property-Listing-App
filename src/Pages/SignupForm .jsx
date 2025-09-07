@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import LoginSignup from "../assets/images/LoginSignup.png";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SecondNavbar from "../Components/CommonLayouts/SecondNavbar";
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -20,118 +23,127 @@ const SignupForm = () => {
 
   const handleSignup = async () => {
     if (password !== confirmPassword) {
-      alert("Passwords do not match ❌");
+      toast.error("Passwords do not match ❌");
       return;
     }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("Signup Successful ✅");
+      toast.success("Signup Successful ✅");
       navigate("/login");
     } catch (error) {
-      alert(error.message);
+      toast.alert(error.message);
     }
   };
 
   return (
-    <div className="flex h-[90vh] items-center justify-center bg-white">
-      <div className="flex w-[90%] max-w-5xl bg-white md:rounded-2xl md:shadow-lg overflow-hidden">
-        {/* Left Section - Form */}
-        <div className="w-full md:w-1/2 p-4">
-          <h2 className="text-2xl font-bold mb-6">Create new account</h2>
+    <>
+      <SecondNavbar />
+      <div className="flex h-auto items-center justify-center bg-white">
+        <div className="flex w-full overflow-hidden">
+          {/* Left Section - Form */}
+          <div className="lg:w-[40%] md:[60%] w-[90%] lg:p-15 p-4 flex flex-col justify-center   mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-center">
+              Create new account
+            </h2>
 
-          {/* Name */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Name</label>
-            <input
-              type="text"
-              placeholder="Enter Your Full Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 border border-blue-900 rounded-lg focus:outline-none"
-            />
-          </div>
+            {/* Name */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-1">Name</label>
+              <input
+                type="text"
+                placeholder="Enter Your Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full px-4 py-3 border border-blue-900 rounded-lg focus:outline-none"
+              />
+            </div>
 
-          {/* Email */}
-          <div className="mb-4 relative">
-            <label className="block text-sm font-medium mb-1">Email Address</label>
-            <input
-              type="email"
-              placeholder="Enter Your Email Id"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-blue-900 rounded-lg outline-none pr-10"
-            />
-            <Mail className="absolute right-3 top-11 text-gray-400 w-5 h-5" />
-          </div>
+            {/* Email */}
+            <div className="mb-4 relative">
+              <label className="block text-sm font-medium mb-1">
+                Email Address
+              </label>
+              <input
+                type="email"
+                placeholder="Enter Your Email Id"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 border border-blue-900 rounded-lg outline-none pr-10"
+              />
+              <Mail className="absolute right-3 top-11 text-gray-400 w-5 h-5" />
+            </div>
 
-          {/* Password */}
-          <div className="mb-4 relative">
-            <label className="block text-sm font-medium mb-1">Password</label>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Enter Your Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-blue-900 rounded-lg outline-none pr-10"
-            />
+            {/* Password */}
+            <div className="mb-4 relative">
+              <label className="block text-sm font-medium mb-1">Password</label>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 border border-blue-900 rounded-lg outline-none pr-10"
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-11 text-gray-500"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
+
+            {/* Confirm Password */}
+            <div className="mb-6 relative">
+              <label className="block text-sm font-medium mb-1">
+                Confirm Password
+              </label>
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                placeholder="Confirm Your Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full px-4 py-3 border border-blue-900 rounded-lg outline-none pr-10"
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-11 text-gray-500"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
+
+            {/* Button */}
             <button
-              type="button"
-              className="absolute right-3 top-11 text-gray-500"
-              onClick={() => setShowPassword(!showPassword)}
+              onClick={handleSignup}
+              className="w-full bg-blue-800 text-white py-3 rounded-full font-medium hover:bg-blue-900 transition"
             >
-              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              Create Account
             </button>
+
+            {/* Login link */}
+            <p className="text-sm text-gray-600 mt-8 text-center">
+              Already have an account?{" "}
+              <span
+                onClick={() => navigate("/login")}
+                className="text-blue-700 font-medium cursor-pointer"
+              >
+                Log In
+              </span>
+            </p>
           </div>
 
-          {/* Confirm Password */}
-          <div className="mb-6 relative">
-            <label className="block text-sm font-medium mb-1">Confirm Password</label>
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              placeholder="Confirm Your Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-blue-900 rounded-lg outline-none pr-10"
+          {/* Right Side (Image) */}
+          <div className="hidden md:block  h-full overflow-hidden rounded-2xl lg:w-[60%] w-[40%] ">
+            <img
+              src={LoginSignup}
+              alt="Login"
+              className="w-full h-[78vh] my-10 object-cover rounded-l-2xl"
             />
-            <button
-              type="button"
-              className="absolute right-3 top-11 text-gray-500"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            >
-              {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-            </button>
           </div>
-
-          {/* Button */}
-          <button
-            onClick={handleSignup}
-            className="w-full bg-blue-800 text-white py-3 rounded-full font-medium hover:bg-blue-900 transition"
-          >
-            Create Account
-          </button>
-
-          {/* Login link */}
-          <p className="text-sm text-gray-600 mt-4 text-center">
-            Already have an account?{" "}
-            <span
-              onClick={() => navigate("/login")}
-              className="text-blue-700 font-medium cursor-pointer"
-            >
-              Log In
-            </span>
-          </p>
-        </div>
-
-        {/* Right Section - Image */}
-        <div className="hidden md:block w-1/2">
-          <img
-            src={LoginSignup}
-            alt="House"
-            className="h-full w-full object-cover"
-          />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

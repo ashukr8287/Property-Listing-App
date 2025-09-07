@@ -1,9 +1,11 @@
 import React from "react";
-
-import RoutePages from "./routes/RoutePages";
 import { BrowserRouter, useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // ✅ important
+import RoutePages from "./routes/RoutePages";
 import Navbar from "./Components/CommonLayouts/Navbar";
 import Footer from "./Components/CommonLayouts/Footer";
+import TitleComponent from "./Components/CommonLayouts/TitleComponent";
 
 function App() {
   return (
@@ -20,9 +22,13 @@ function MainLayout() {
 
   return (
     <>
-      <Navbar />
+      <TitleComponent />
+      {!hideFooterRoutes.includes(location.pathname) && <Navbar />}
       <RoutePages />
       {!hideFooterRoutes.includes(location.pathname) && <Footer />}
+      
+      {/* ✅ Toastify container must be included only once */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }
