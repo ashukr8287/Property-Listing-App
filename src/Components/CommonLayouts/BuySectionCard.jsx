@@ -9,7 +9,6 @@ function BuySectionCard({ details }) {
   return (
     <div className="w-full h-auto rounded-2xl shadow-md relative  bg-gray-100 hover:shadow-lg transition sm:mb-20 mb-15">
       <div className="bg-gray-100 rounded-md w-full relative">
-        {/* Image with Animation */}
         <img
           src={details.image}
           alt={details.title || "Property"}
@@ -45,15 +44,15 @@ function BuySectionCard({ details }) {
 
               {/* Price & Button */}
               <div className="flex justify-between items-center">
-               <span className="text-lg font-semibold text-gray-800">
-              <span className="text-lg font-semibold text-gray-800">
-                {details.buildingNumber
-                  ? `$${Number(
-                      details.buildingNumber.toString().slice(0, 5)
-                    ).toLocaleString()}`
-                  : "Contact for price"}
-              </span>
-            </span>
+                <span className="text-lg font-semibold text-gray-800">
+                  <span className="text-lg font-semibold text-gray-800">
+                    {details.buildingNumber
+                      ? `$${Number(
+                          details.buildingNumber.toString().slice(0, 5)
+                        ).toLocaleString()}`
+                      : "Contact for price"}
+                  </span>
+                </span>
                 <button className="bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium px-4 py-2 rounded-full">
                   Know More
                 </button>

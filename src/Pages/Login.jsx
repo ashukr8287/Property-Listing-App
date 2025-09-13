@@ -35,10 +35,10 @@ const Login = () => {
       );
       const user = userCredential.user;
 
-      // 🔹 Get Firebase ID Token
+      // Get Firebase ID Token
       const token = await user.getIdToken();
 
-      // 🔹 Save in localStorage
+      //  Save in localStorage
       localStorage.setItem("authToken", token);
       localStorage.setItem("userEmail", user.email);
 

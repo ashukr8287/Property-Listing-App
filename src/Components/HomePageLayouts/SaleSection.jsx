@@ -17,7 +17,6 @@ function SaleSection() {
         setLoading(true);
         const response = await FetchApi();
         setData(response.data);
-        console.log(response.data);
         setLoading(false);
       } catch (error) {
         console.log("API Error", error);

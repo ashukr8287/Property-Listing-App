@@ -14,10 +14,10 @@ const PropertyCard = ({ details, month }) => {
           src={details.image}
           alt={details.title || "Property"}
           className="w-full h-60 object-cover rounded-md mb-2 "
-          loading="lazy-loading"
+          loading="lazy"
           onError={(e) => {
-            e.target.onerror = null; // infinite loop avoid karne ke liye
-            e.target.src = genImg(); // yaha apni specific image lagao
+            e.target.onerror = null; // infinite loop avoid
+            e.target.src = genImg(); // yaha apni specific 
           }}
         />
 

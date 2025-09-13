@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // ✅ important
 import RoutePages from "./routes/RoutePages";
@@ -8,15 +8,6 @@ import Footer from "./Components/CommonLayouts/Footer";
 import TitleComponent from "./Components/CommonLayouts/TitleComponent";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <MainLayout />
-    </BrowserRouter>
-  );
-}
-
-// ✅ Separate component so useLocation works inside BrowserRouter
-function MainLayout() {
   const location = useLocation();
   const hideFooterRoutes = ["/login", "/signup"];
 

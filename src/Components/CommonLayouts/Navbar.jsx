@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, House, CircleArrowRight } from "lucide-react";
-import logo from '../../assets/images/Logo-icon.png'
+import logo from "../../assets/images/Logo-icon.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
@@ -12,13 +12,11 @@ function Navbar() {
 
   // 🔹 Check if user is logged in
   const token = localStorage.getItem("authToken");
-  const userEmail = localStorage.getItem("userEmail");
 
   // 🔹 Logout function
   const handleLogout = async () => {
     await signOut(auth);
     localStorage.removeItem("authToken");
-    localStorage.removeItem("userEmail");
     navigate("/login");
   };
 
@@ -26,13 +24,11 @@ function Navbar() {
     <nav className="w-full shadow-sm bg-white top-0 left-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-4 lg:px-6">
         {/* Logo */}
-        <div
-          className="cursor-pointer"
-          onClick={() => navigate("/")}
-        >
-          <span className=" cursor-pointer text-base font-bold  flex items-center"><img src={logo} className="h-8 mr-2" alt="" />PropBot </span>
-          
-          
+        <div className="cursor-pointer" onClick={() => navigate("/")}>
+          <span className=" cursor-pointer text-base font-bold  flex items-center">
+            <img src={logo} className="h-8 mr-2" alt="" />
+            PropBot
+          </span>
         </div>
 
         {/* Desktop Menu */}
@@ -62,16 +58,24 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600  hover:border-b-2">Rent</a>
+            <a href="#" className="hover:text-blue-600  hover:border-b-2">
+              Rent
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600  hover:border-b-2">Sell</a>
+            <a href="#" className="hover:text-blue-600  hover:border-b-2">
+              Sell
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600  hover:border-b-2">About Us</a>
+            <a href="#" className="hover:text-blue-600  hover:border-b-2">
+              About Us
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600  hover:border-b-2">Contact Us</a>
+            <a href="#" className="hover:text-blue-600  hover:border-b-2">
+              Contact Us
+            </a>
           </li>
         </ul>
 
@@ -144,7 +148,7 @@ function Navbar() {
             <li>
               <a href="#">About Us</a>
             </li>
-            <li >
+            <li>
               <a href="#">Contact Us</a>
             </li>
           </ul>
@@ -157,7 +161,8 @@ function Navbar() {
                 setIsOpen(false);
               }}
             >
-              Login / Register <CircleArrowRight size={18} className="ml-2 mt-1" />
+              Login / Register{" "}
+              <CircleArrowRight size={18} className="ml-2 mt-1" />
             </button>
           ) : (
             <div className="flex flex-col items-center mt-2 space-y-2">

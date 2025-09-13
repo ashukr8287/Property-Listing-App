@@ -1,9 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";  // ✅ Add this
+import { getAuth } from "firebase/auth";  
 import { getAnalytics } from "firebase/analytics";
 
-// Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyDz_mnQmkb3m5aCERLNiEBmcPeL8xbvmJQ",
   authDomain: "auth-6e9bd.firebaseapp.com",
@@ -17,7 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ✅ Initialize Firebase Auth
+// Initialize Firebase Auth
 export const auth = getAuth(app);
 
 // Initialize Analytics (optional)
